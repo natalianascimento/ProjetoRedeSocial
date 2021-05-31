@@ -1,10 +1,12 @@
 <?php
 class Usuario
 {
-    public $id; //Esse ID será AI na base, neste caso, não deveria ter uma função que puxa o id para a classe? Pq neste caso ele ficará vazio!
-    public $nome; //Tive que alterar para public pq na ServiceUsuario.php aporesentava como empty.
-    public $email;
-    public $senha;
+    private $id;
+    private $nomeCompleto; 
+    private $nomeUsuario; 
+    private $email;
+    private $telefone;
+    private $senha;
 
     public function __get($atributo)
     {
