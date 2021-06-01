@@ -38,19 +38,18 @@ class UsuarioDAO{
 
     function consultarUsuarioDAO($campo, $registro){
 
-        //$sql = "SELECT * FROM usuario WHERE :campo = :registro";
-        $sql = "SELECT * FROM usuario WHERE $campo = $registro";
+        $sql = "SELECT * FROM usuario WHERE $campo = :registro";
 
         $stmt = $this->conectafuncao->prepare($sql);
 
-        // $stmt->bindParam(":campo", $campo);
-        // $stmt->bindParam(":registro", $registro);
+        $stmt->bindParam(":registro", $registro);
         
         $stmt->execute();
 
-        // return $stmt->fetchAll();
-        $resultado = $stmt->fetchAll();
-        print_r($resultado);
-        exit;
+        return $stmt->fetchAll();
+
+        // $resultado = $stmt->fetchAll();
+        // print_r($resultado);
+        // exit;
     }
 }

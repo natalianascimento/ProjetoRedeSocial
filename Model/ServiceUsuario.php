@@ -12,9 +12,7 @@ class UsuarioService {
         
         if (!empty($usuario->nomeCompleto) and !empty($usuario->nomeUsuario) and !empty($usuario->email)  
         and !empty($usuario->telefone)  and !empty($usuario->senha)){
-          
-            require_once 'UsuarioDAO.php';
-            
+                      
             $dao = new UsuarioDAO();
             
             $cadastro = $dao->cadastrarUsuarioDAO($usuario);
@@ -33,9 +31,7 @@ class UsuarioService {
     }
 
     public function efetuarLoginUsuario($usuario)
-    {
-        //require_once 'UsuarioDAO.php';
-            
+    {            
         $dao = new UsuarioDAO();
         
         $campo = "email";
@@ -45,12 +41,17 @@ class UsuarioService {
         
         if ($consulta != null){
 
-            $senhaCadastrada = $consulta['senha'];
+            $senhaCadastrada = $consulta[0]['senha']; //NÃO ENTENDI O PORQUE TIVE QUE COLOCAR ESSE ZERO ANTES DE DECLARAR O CAMPO SENHA
 
             if(strcmp($senhaCadastrada, $usuario->senha) == 0){
-                echo "Login efetuado com sucesso";
+                
+                header('Location: ../View/ViewFeed.html');
 
+            } else {
+                echo "Seus dados estão incorretos";
             }
+        } else{
+            echo "Seus dados estão incorretos";
         }
     }
 }

@@ -14,7 +14,7 @@ function cadastrarUsuario(){
     require_once '../Model/ServiceUsuario.php';
     
     $usuario = new Usuario;
-    $service = new UsuarioService();
+    $service = new UsuarioService;
     
     $usuario->nomeCompleto = $_POST['NomeCompleto'];
     $usuario->nomeUsuario = $_POST['NomeUsuario'];
@@ -30,7 +30,7 @@ function efetuarLogin(){
     require_once '../Model/ServiceUsuario.php';
     
     $usuario = new Usuario;
-    $service = new UsuarioService();
+    $service = new UsuarioService;
 
     $usuario->email = $_POST['email'];
     $usuario->senha = $_POST['senha'];
