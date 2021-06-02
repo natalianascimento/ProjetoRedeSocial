@@ -36,4 +36,16 @@ class PostagemDAO{
 
         return $stmt->fetchAll();
     }
+    
+    function consultarPostagemDAO(){
+        
+        $sql = "SELECT * FROM postagem";
+        
+        $stmt = $this->conectafuncao->prepare($sql);
+        
+        $stmt->execute();
+        
+        return $stmt->fetchAll();
+        
+    }
 }

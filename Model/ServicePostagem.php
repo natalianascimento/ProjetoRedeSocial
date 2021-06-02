@@ -14,9 +14,11 @@ class PostagemService {
 
             $dao = new PostagemDAO();
 
-            $pasta = "../View/Postagens";
+            $extensao = strtolower(substr($_FILES['arquivo']['name'], -4));
+            $novoNomeArquivo = md5(time()).$extensao;
+            $diretorio = "../View/Postagens/";
 
-            move_uploaded_file($postagem->arquivo,$pasta);
+            move_uploaded_file($_FILES['arquivo']['tmp_name'],$diretorio.$novoNomeArquivo);
             
             $cadastro = $dao->cadastrarPostagemDAO($postagem);
 
@@ -28,6 +30,14 @@ class PostagemService {
 
             }
         }
-
+    }
+    
+    public function consultarPostagem() 
+    {
+        
+        $dao = new PostagemDAO();
+        
+        $consulta = $dao->consultarPostagemDAO();
+        
     }
 }

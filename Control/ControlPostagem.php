@@ -18,8 +18,8 @@ function cadastrarPostagem(){
     $postagem->conteudo = $_POST['conteudo'];
     $postagem->arquivo = $_FILES['arquivo']['name'];
     $postagem->status = 1;
-    $postagem->data = date('d/m/Y'); //Data de hoje
+    $postagem->data = NOW(); //Data de hoje
 
-    //$service->
+    $service->cadastrarPostagem($postagem);
 
 }

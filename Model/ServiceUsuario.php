@@ -45,7 +45,7 @@ class UsuarioService {
 
             if(strcmp($senhaCadastrada, $usuario->senha) == 0){
                 
-                header('Location: ../View/ViewFeed.html');
+                header('Location: ../View/ViewFeed.php');
 
             } else {
                 echo "Seus dados estão incorretos";
