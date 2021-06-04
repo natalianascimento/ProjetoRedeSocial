@@ -39,5 +39,6 @@ class PostagemService {
         
         $consulta = $dao->consultarPostagemDAO();
         
+        return $consulta;
     }
 }

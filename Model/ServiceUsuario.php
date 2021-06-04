@@ -9,9 +9,21 @@ class UsuarioService {
     
     public function cadastrarUsuario($usuario)
     {
+        print_r($usuario);
+        echo "<br>";
+        echo $usuario->nomeCompleto;
+        echo "<br>";
+        echo $usuario->nomeUsuario;
+        echo "<br>";
+        echo $usuario->email;
+        echo "<br>";
+        echo $usuario->telefone;
+        echo "<br>";
+        echo $usuario->senha;
+        echo "<br>";
         
-        if (!empty($usuario->nomeCompleto) and !empty($usuario->nomeUsuario) and !empty($usuario->email)  
-        and !empty($usuario->telefone)  and !empty($usuario->senha)){
+//         if (!empty($usuario->nomeCompleto) and !empty($usuario->nomeUsuario) and !empty($usuario->email)  
+//         and !empty($usuario->telefone)  and !empty($usuario->senha)){
                       
             $dao = new UsuarioDAO();
             
@@ -25,9 +37,9 @@ class UsuarioService {
 
             }
             
-        } else {
-            echo "campo não foi preenchido";
-        }
+//         } else {
+//             echo "campo não foi preenchido";
+//         }
     }
 
     public function efetuarLoginUsuario($usuario)

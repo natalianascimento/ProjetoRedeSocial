@@ -2,6 +2,7 @@
 define('MYSQL_HOST','mysql:host=localhost');     
 define('MYSQL_USER','root');
 define('MYSQL_PASSWORD','');
+//define('MYSQL_DB_NAME','dbname=projetorede');
 define('MYSQL_DB_NAME','dbname=rede_social');
 define('SET_NAMES','SET NAMES UTF8');
 

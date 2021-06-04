@@ -32,7 +32,7 @@ class UsuarioDAO{
 
         $stmt->execute();
 
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(); //FetchAll é um array multidimensional -  matriz
 
     }
 

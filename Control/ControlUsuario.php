@@ -21,6 +21,9 @@ function cadastrarUsuario(){
     $usuario->email = $_POST['email'];
     $usuario->telefone = $_POST['telefone'];
     $usuario->senha = $_POST['senha'];
+   
+//     print_r($_POST);
+//     exit;
     
     $service->cadastrarUsuario($usuario);
 }

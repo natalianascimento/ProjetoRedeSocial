@@ -37,11 +37,11 @@ $album = $service->consultarPostagem();
 
 	<table>
 		<tr> 
-			<?php foreach ($album as $fotos){
+			<?php foreach ($album as $postagem){
 			    			
 			?>
 			<td>
-				<img src="<?php echo "./imagem" ?>" width="260" height="200"/>			
+				<img src="<?php echo "./Postagens/".$postagem["arquivo"] ?>" width="260" height="200"/>			
 			</td>
 			<?php } ?>
 		</tr>
